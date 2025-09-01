@@ -31,7 +31,7 @@ body {
 
 /* Книга */
 .book {
-    width: 90vw;
+    width: 98vw;
     height: 600px;
     position: relative;
     transform-style: preserve-3d;
@@ -40,7 +40,7 @@ body {
 
 /* Разворот (2 страницы) */
 .spread {
-    width: 90vw;
+    width: 98vw;
     height: 600px;
     position: absolute;
     top: 0;
@@ -77,14 +77,14 @@ body {
 /* Левая страница */
 .left-page {
     border-right: 2px solid #ccc;
-    border-radius: 10px 0 0 10px;
+    /* border-radius: 10px 0 0 10px; */
 }
 
 
 /* Правая страница */
 .right-page {
     border-left: 2px solid #ccc;
-    border-radius: 0 10px 10px 0;
+    /* border-radius: 0 10px 10px 0; */
 }
 
 /* Контент страницы */
@@ -186,7 +186,7 @@ body {
 .anim-page {
     height: 100%;
     width: 2px;
-    background: #737373;
+    background: #ececec;
     position: absolute;
     top: 0;
     left: 50%;
@@ -208,7 +208,8 @@ body {
     66% {
         width: 2px;
         left: 50%;
-        transform: translateX(-50%); /* сужается до центра */
+        /* transform: translateX(-50%);  */
+        /* сужается до центра */
     }
     99% {
         width: 50%;
@@ -219,7 +220,7 @@ body {
     100% {
         height: 100%;
         width: 2px;
-        background: #737373;
+        background: #ececec;
         position: absolute;
         top: 0;
         left: 50%;
@@ -243,7 +244,8 @@ body {
     66% {
         width: 2px;
         left: 50%;
-        transform: translateX(-50%); /* сужается до центра */
+        /* transform: translateX(-50%);  */
+        /* сужается до центра */
     }
     99% {
         width: 50%;
@@ -253,7 +255,7 @@ body {
     100% {
         height: 100%;
         width: 2px;
-        background: #737373;
+        background: #ececec;
         position: absolute;
         top: 0;
         left: 50%;

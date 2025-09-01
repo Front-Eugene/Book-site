@@ -2,7 +2,7 @@
 const spreads = document.querySelectorAll('.spread');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
-const pageInfo = document.getElementById('pageInfo');
+// const pageInfo = document.getElementById('pageInfo');
 const animPage = document.querySelector('.anim-page');
 
 
@@ -11,7 +11,7 @@ const totalSpreads = spreads.length;
 let isAnimating = false;
 
 function updatePageInfo() {
-    pageInfo.textContent = `Разворот ${currentSpread} из ${totalSpreads}`;
+    // pageInfo.textContent = `Разворот ${currentSpread} из ${totalSpreads}`;
     prevBtn.disabled = currentSpread <= 1;
     nextBtn.disabled = currentSpread >= totalSpreads;
 }
@@ -63,12 +63,6 @@ function turnSpread(direction) {
 
 prevBtn.addEventListener('click', () => turnSpread('prev'));
 nextBtn.addEventListener('click', () => turnSpread('next'));
-
-nextBtn.addEventListener('click', () => {
-    playAnimationForward(() => {
-        turnSpread('next');
-    });
-});
 
 const book = document.getElementById('book');
 book.addEventListener('click', (event) => {
