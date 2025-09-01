@@ -1,0 +1,274 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Основной контейнер */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #a5a5a5;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Контейнер книги */
+.book-container {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+/* Книга */
+.book {
+    width: 90vw;
+    height: 600px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+
+/* Разворот (2 страницы) */
+.spread {
+    width: 90vw;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    transform-style: preserve-3d;
+    opacity: 0;
+    transform: translateX(100%);
+    /* Убраны все анимации и transition */
+}
+
+
+/* Активный разворот */
+.spread.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Страница */
+.page {
+    width: 50%;
+    height: 600px;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+/* Левая страница */
+.left-page {
+    border-right: 2px solid #ccc;
+    border-radius: 10px 0 0 10px;
+}
+
+
+/* Правая страница */
+.right-page {
+    border-left: 2px solid #ccc;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Контент страницы */
+.page-content {
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Заголовки */
+.page-content h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+
+/* Текст */
+.page-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+
+/* Кнопки управления */
+.controls {
+    margin-top: -30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(11, 11, 11, 0.403);
+    padding: 15px 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(73, 72, 72, 0.2);
+}
+
+
+/* Кнопка */
+.btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+
+.btn:active {
+    transform: translateY(0);
+}
+
+
+.btn:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* Информация о странице */
+.page-info {
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    min-width: 150px;
+    text-align: center;
+}
+
+
+/* Скрытые развороты */
+.spread.hidden {
+    transform: translateX(0) scale(0.95);
+    z-index: 0;
+    opacity: 0;
+}
+
+.anim-page {
+    height: 100%;
+    width: 2px;
+    background: #737373;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    transform-origin: center;
+}
+
+.animate-forward {
+  animation: flipForward 0.7s forwards;
+}
+
+@keyframes flipForward {
+    0% {
+        width: 50%;
+        left: 50%;
+        transform: translateX(0); /* расширяется вправо от центра */
+    }
+    66% {
+        width: 2px;
+        left: 50%;
+        transform: translateX(-50%); /* сужается до центра */
+    }
+    99% {
+        width: 50%;
+        left: 0;
+        transform: translateX(0); /* расширяется влево от центра до левого края */
+    }
+
+    100% {
+        height: 100%;
+        width: 2px;
+        background: #737373;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+        transform-origin: center;
+    }
+}
+
+
+.animate-backward {
+    animation: flipBackward 0.7s forwards;
+}
+
+@keyframes flipBackward {
+    0% {
+        width: 50%;
+        left: 0;
+        transform: translateX(0); /* расширяется влево от левого края */
+    }
+    66% {
+        width: 2px;
+        left: 50%;
+        transform: translateX(-50%); /* сужается до центра */
+    }
+    99% {
+        width: 50%;
+        left: 50%;
+        transform: translateX(0); /* расширяется вправо от центра до правого края */
+    }
+    100% {
+        height: 100%;
+        width: 2px;
+        background: #737373;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+        transform-origin: center;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .book {
+
+    }
+}

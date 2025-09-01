@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер-Книга</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Контейнер для книги -->
+    <div class="book-container">
+        
+        <!-- Книга -->
+        <div class="book" id="book">
+            <div class="anim-page"></div>
+            <!-- Разворот 1: Страницы 1-2 -->
+            <div class="spread active" data-spread="1">
+                <div class="page left-page">
+                    <div class="page-content">
+                        <h1>Страница 1</h1>
+                        <p>Это первая страница книги.</p>
+                        <p>Левая страница первого разворота.</p>
+                    </div>
+                </div>
+                <div class="page right-page">
+                    <div class="page-content">
+                        <h1>Страница 2</h1>
+                        <p>Это вторая страница книги.</p>
+                        <p>Правая страница первого разворота.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Разворот 2: Страницы 3-4 -->
+            <div class="spread" data-spread="2">
+                <div class="page left-page">
+                    <div class="page-content">
+                        <h1>Страница 3</h1>
+                        <p>Это третья страница книги.</p>
+                        <p>Левая страница второго разворота.</p>
+                    </div>
+                </div>
+                <div class="page right-page">
+                    <div class="page-content">
+                        <h1>Страница 4</h1>
+                        <p>Это четвертая страница книги.</p>
+                        <p>Правая страница второго разворота.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Разворот 3: Страницы 5-6 -->
+            <div class="spread" data-spread="3">
+                <div class="page left-page">
+                    <div class="page-content">
+                        <h1>Страница 5</h1>
+                        <p>Это пятая страница книги.</p>
+                        <p>Левая страница третьего разворота.</p>
+                    </div>
+                </div>
+                <div class="page right-page">
+                    <div class="page-content">
+                        <h1>Страница 6</h1>
+                        <p>Это шестая страница книги.</p>
+                        <p>Правая страница третьего разворота.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Разворот 4: Страницы 7-8 -->
+            <div class="spread" data-spread="4">
+                <div class="page left-page">
+                    <div class="page-content">
+                        <h1>Страница 7</h1>
+                        <p>Это седьмая страница книги.</p>
+                        <p>Левая страница четвертого разворота.</p>
+                    </div>
+                </div>
+                <div class="page right-page">
+                    <div class="page-content">
+                        <h1>Страница 8</h1>
+                        <p>Это восьмая страница книги.</p>
+                        <p>Правая страница четвертого разворота.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Разворот 5: Страницы 7-8 -->
+            <div class="spread" data-spread="5">
+                <div class="page left-page">
+                    <div class="page-content">
+                        <h1>Страница 9</h1>
+                        <p>Это седьмая страница книги.</p>
+                        <p>Левая страница четвертого разворота.</p>
+                    </div>
+                </div>
+                <div class="page right-page">
+                    <div class="page-content">
+                        <h1>Страница 10</h1>
+                        <p>Это восьмая страница книги.</p>
+                        <p>Правая страница четвертого разворота.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Кнопки навигации -->
+    <div class="controls">
+        <button id="prevBtn" class="btn">← Назад</button>
+        <span id="pageInfo" class="page-info">Разворот 1 из 4</span>
+        <button id="nextBtn" class="btn">Вперед →</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
