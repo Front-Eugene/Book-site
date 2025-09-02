@@ -5,6 +5,18 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.prod-name {
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700; /* можно сделать жирнее для лучшей видимости */
+  font-size: 48px; /* пример размера */
+  color: transparent; /* прозрачный цвет букв */
+  -webkit-text-stroke: 2px #333; /* обводка (толщина и цвет) */
+  text-stroke: 1.5px #333333; /* для совместимости */
+}
 
 /* Основной контейнер */
 body {
@@ -15,9 +27,42 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffffffd9, #000000b0);
+}
+
+.wrap {
+    position: relative;
+    z-index: 100;
+}
+
+ul {
+    padding: 0;
+    margin: 10px 15px;
+    color: #333;
+}
+
+.more {
+    background: #333;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 200px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+}
 
 /* Контейнер книги */
 .book-container {
@@ -32,9 +77,11 @@ body {
 /* Книга */
 .book {
     width: 98vw;
+    margin-top: 20px;
     height: 600px;
     position: relative;
     transform-style: preserve-3d;
+    box-shadow: 0px 5px 5px #000000;
 }
 
 
@@ -89,29 +136,15 @@ body {
 
 /* Контент страницы */
 .page-content {
-    padding: 40px;
-    text-align: center;
+    padding: 10px;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    z-index: 100;
 }
-
-
-/* Заголовки */
-.page-content h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
 
 /* Текст */
 .page-content p {
-    color: #555;
+    color: #333;
     line-height: 1.6;
     margin-bottom: 15px;
     font-size: 1.1rem;
@@ -186,13 +219,15 @@ body {
 .anim-page {
     height: 100%;
     width: 2px;
-    background: #ececec;
+    /* background: #ececec; */
+    background: #333;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
     transform-origin: center;
+    z-index: 200;
 }
 
 .animate-forward {
@@ -220,7 +255,7 @@ body {
     100% {
         height: 100%;
         width: 2px;
-        background: #ececec;
+        background: #333;
         position: absolute;
         top: 0;
         left: 50%;
@@ -255,22 +290,12 @@ body {
     100% {
         height: 100%;
         width: 2px;
-        background: #ececec;
+        background: #333;
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
         z-index: 20;
         transform-origin: center;
-    }
-}
-
-
-
-
-
-@media (max-width: 768px) {
-    .book {
-
     }
 }
