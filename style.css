@@ -243,8 +243,6 @@ ul {
     66% {
         width: 2px;
         left: 50%;
-        /* transform: translateX(-50%);  */
-        /* сужается до центра */
     }
     99% {
         width: 50%;
@@ -279,8 +277,6 @@ ul {
     66% {
         width: 2px;
         left: 50%;
-        /* transform: translateX(-50%);  */
-        /* сужается до центра */
     }
     99% {
         width: 50%;
@@ -297,5 +293,21 @@ ul {
         transform: translateX(-50%);
         z-index: 20;
         transform-origin: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        padding: 5px;
+    }
+ 
+    .prod-name {
+        -webkit-text-stroke: 1px #333;
+        font-size: 30px;
+    }
+
+    .more {
+        padding: 12px 10px;
+        font-size: 15px;
     }
 }
