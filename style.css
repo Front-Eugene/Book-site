@@ -239,6 +239,8 @@ ul {
     padding: 12px 20px;
     border-radius: 20px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
     font-size: 1rem;
     font-weight: 500;
     transition: all 0.3s ease;
