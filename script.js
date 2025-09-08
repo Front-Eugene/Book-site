@@ -130,3 +130,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     updatePageInfo();
 });
+
+function goToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    // Находим номер spread с нужным ID
+    const spreadsArr = Array.from(document.querySelectorAll('.spread'));
+    const index = spreadsArr.indexOf(section); // 0-based индекс
+    if (index === -1) return;
+    goToSpread(index + 1); // Приводим к 1-based нумерации
+}
+
+document.querySelectorAll('.goToSection').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const sectionId = btn.getAttribute('data-section');
+        goToSection(sectionId);
+    });
+});
+
+const menuBtn = document.querySelector('.menu-btn');
+const menuList = document.querySelector('.menu-list');
+
+
+function toggleMenu() {
+  menuBtn.classList.toggle('active');
+  menuList.classList.toggle('active');
+}
+
+// Клик по кнопке меню
+menuBtn.addEventListener('click', toggleMenu);
+
+const navLinks = document.querySelectorAll('.goToSection')
+// Клик по любой ссылке в меню
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // Если меню открыто — закрываем
+    if (menuList.classList.contains('active')) {
+      toggleMenu();
+    }
+  });
+});
+
+function goToSpread(targetSpread) {
+    if (isAnimating || targetSpread < 1 || targetSpread > totalSpreads || targetSpread === currentSpread) return;
+
+    // Опционально: плавно закрыть текущий разворот с анимацией
+    const switchSpread = () => {
+        spreads[currentSpread - 1].classList.remove('active');
+        spreads[targetSpread - 1].classList.add('active');
+        currentSpread = targetSpread;
+        updatePageInfo();
+        isAnimating = false;
+    };
+
+    isAnimating = true;
+
+    // Если нужна анимация — определяется по направлению
+    if (targetSpread > currentSpread) {
+        playAnimationForward(switchSpread);
+    } else if (targetSpread < currentSpread) {
+        playAnimationBackward(switchSpread);
+    } else {
+        isAnimating = false;
+    }
+}

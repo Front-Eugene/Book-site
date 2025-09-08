@@ -8,6 +8,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
+.menu-btn {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background: #00000082;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.menu-btn div {
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.4s;
+    position: relative;
+}
+
+.menu-btn.active div:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+}
+
+.menu-btn.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active div:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+}
+
+.menu-list {
+    position: fixed;
+    width: 300px;
+    padding: 20px;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(11, 11, 11, 0.403);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(73, 72, 72, 0.2);
+    z-index: 999;
+    display: none;
+}
+
+.menu-list.active {
+    display: block;
+}
+
+.goToSection {
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
 .prod-name {
   margin-bottom: 20px;
   font-family: 'Roboto', sans-serif;
@@ -153,7 +213,7 @@ ul {
 
 /* Кнопки управления */
 .controls {
-    margin-top: -30px;
+    margin-top: -50px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -302,6 +362,7 @@ ul {
     }
  
     .prod-name {
+        color: #333;
         -webkit-text-stroke: 1px #333;
         font-size: 30px;
     }
