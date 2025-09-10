@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="product-wrap">
+        <div class="gallery">
+            <div class="gallery-main">
+                <img id="mainImage" src="img/sofa-1.jpg" alt="Фото 1">
+            </div>
+            <div class="gallery-thumbs">
+                <div>
+                    <img src="img/sofa-2.jpg" alt="Фото 1" class="active" onclick="changeImage(this)">
+                </div>
+                <div>
+                    <img src="img/sofa-3.jpg" alt="Фото 2" onclick="changeImage(this)">
+                </div>
+                <div>
+                    <img src="img/sofa-2.jpg" alt="Фото 3" onclick="changeImage(this)">
+                </div>
+                <div>
+                    <img src="img/sofa-1.jpg" alt="Фото 4" onclick="changeImage(this)">
+                </div>
+            </div>
+        </div>
+
+        <div class="prod-descr">
+            <h1 class="title">
+                Название продукта
+            </h1>
+            <b class="descr">Информация о продукте</b>
+
+            <p>
+                Диван — это стильный и функциональный предмет мебели, который идеально впишется в современный интерьер
+                гостиной, кабинета или спальни. Он выполнен из высококачественных материалов, обеспечивающих
+                долговечность и комфорт при ежедневном использовании. Мягкое сиденье и эргономичная спинка создают
+                оптимальные условия для отдыха, а прочный каркас гарантирует надежность конструкции. Дизайн дивана
+                отличается универсальностью: классические формы сочетаются с современными деталями, что позволяет легко
+                подобрать подходящее решение под любое пространство.
+            </p>
+
+            <a href="/" class="article-link">
+                <button class="btn-1">
+                    Связавться
+                </button>
+            </a>
+
+            <a href="/" class="article-link">
+                <button class="btn-1" style="margin-top: 20px;">
+                    На главную
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="care">УХОД</button>
+        <button class="tab-btn" data-tab="desc">ХАРАКТЕРИСТИКИ</button>
+    </div>
+    <div id="care" class="tab-content active">
+        <p>
+            Регулярно очищайте поверхность дивана от пыли мягкой щеткой или пылесосом с насадкой для мебели, чтобы сохранить внешний вид и продлить срок службы ткани.
+            Избегайте попадания прямых солнечных лучей на обивку, чтобы предотвратить выцветание и ухудшение цвета.
+            Немедленно удаляйте пятна мягкой сухой или слегка влажной тканью, избегая чрезмерного намокания. Для стойких загрязнений используйте специальные средства для чистки ткани, рекомендованные производителем.
+            При чистке экокожи протирайте мягкой влажной тряпкой, избегая абразивных и химически агрессивных веществ.
+            Для сохранения упругости и формы сидений регулярно проветривайте подушки и меняйте их местами.
+            Не ставьте на диван горячие предметы и избегайте механических повреждений.
+            Периодически проверяйте и подтягивайте крепления каркаса и механизма раскладывания для безопасности и корректного использования.
+        </p>
+    </div>
+    <div id="desc" class="tab-content">
+        <p>
+            <ul>
+            <li><strong>Ширина:</strong> 220 см</li>
+            <li><strong>Глубина:</strong> 95 см</li>
+            <li><strong>Высота:</strong> 90 см</li>
+            <li><strong>Высота посадочного места:</strong> 45 см</li>
+            <li><strong>Глубина сиденья:</strong> 55 см</li>
+            <li><strong>Размер спального места:</strong> 200 × 140 см</li>
+            <li><strong>Каркас:</strong> массив дерева, фанера</li>
+            <li><strong>Обивка:</strong> Рогожка (жаккард, велюр или экокожа – на выбор)</li>
+            <li><strong>Наполнитель сиденья:</strong> Высокоэластичный ППУ (пенополиуретан), марка HR35</li>
+            <li><strong>Тип пружин:</strong> Змейка</li>
+            <li><strong>Раскладной механизм:</strong> Еврокнижка/Дельфин</li>
+            <li><strong>Ящик для белья:</strong> есть</li>
+            <li><strong>Подушки:</strong> съёмные чехлы, наполнитель – холлофайбер</li>
+            </ul>
+        </p>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .tabs {
+            padding: 0 50px;
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 18px;
+            border-bottom: 2px solid transparent;
+            transition: border 0.2s;
+        }
+
+        .tab-btn.active {
+            border-bottom: 2px solid #333;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 0 50px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .title {
+            margin: 0;
+        }
+
+        .btn-1 {
+            border: none;
+            color: #fff;
+            min-width: 100%;
+            padding: 20px 0;
+            text-transform: uppercase;
+            background: #333;
+            cursor: pointer;
+        }
+
+        .prod-descr {
+            width: 50%;
+            padding-left: 50px;
+        }
+
+        .prod-descr p {
+            margin: 20px 0;
+        }
+
+        .prod-descr ul {
+            list-style-type: none;
+        }
+
+        .prod-descr li {
+            margin: 10px 0;
+        }
+
+        .prod-descr li span {
+            margin-right: 5px;
+            font-weight: 600;
+        }
+
+        .product-wrap {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gallery {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .gallery-main {
+            width: 100%;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .gallery-main img {
+            min-width: 100%;
+            max-height: 100%;
+            /*object-fit: contain;*/
+        }
+
+        .gallery-thumbs {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .gallery-thumbs div {
+            width: 100px;
+        }
+
+        .gallery-thumbs p {
+            width: 90%;
+        }
+
+        .gallery-thumbs img {
+            width: 100%;
+            height: 60px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .prod-descr h2,
+        .prod-text {
+            margin-bottom: 20px;
+        }
+
+        .card-price {
+            font-size: 25px;
+            margin: 20px 0;
+        }
+
+        .card-price span {
+            font-weight: 600;
+        }
+
+        @media screen and (min-width: 100px) and (max-width: 1200px) {
+            .product-wrap {
+                flex-wrap: wrap;
+                padding: 20px;
+            }
+
+            .gallery {
+                width: 100%;
+            }
+
+            .gallery-thumbs {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .gallery-main {
+                width: 100%;
+                min-height: 100px;
+            }
+
+            .prod-descr {
+                width: 100%;
+                padding-left: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+
+
+
+    <script>
+        function changeImage(thumb) {
+            // Сменить большое фото
+            document.getElementById('mainImage').src = thumb.src;
+            document.getElementById('mainImage').alt = thumb.alt;
+            // Убрать класс active у всех миниатюр
+            document.querySelectorAll('.gallery-thumbs img').forEach(img => img.classList.remove('active'));
+            // Добавить класс active к выбранной миниатюре
+            thumb.classList.add('active');
+        }
+    </script>
+
+    <script>
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(tc => tc.classList.remove('active'));
+
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
